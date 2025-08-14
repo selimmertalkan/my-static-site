@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Azure Blob Storage and Blob Storage Tiers | selimmertalkan</title>
+<meta name="keywords" content="">
+<meta name="description" content="What is Azure Blob Storage?
+
+Azure Blob Storage is Microsoft’s cloud-based object storage service for storing massive amounts of unstructured data - such as images, videos, documents, backups, and logs.
+The term “blob” stands for Binary Large Object, meaning it can store virtually any file format without a fixed structure.
+It is designed for high availability, global accessibility, and cost efficiency, making it a preferred choice for businesses and developers needing scalable cloud storage.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/posts/my-first-post/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.36819bea596090d8b48cf10d9831382996197aa7e4fc86f792f7c08c9ca4d23b.css" integrity="sha256-NoGb6llgkNi0jPENmDE4KZYZeqfk/Ib3kvfAjJyk0js=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/my-first-post/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="selimmertalkan (Alt + H)">selimmertalkan</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/about/" title="About Me">
+                    <span>About Me</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://linktr.ee/selimmertalkan" title="linktr.ee">
+                    <span>linktr.ee</span>&nbsp;
+                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Azure Blob Storage and Blob Storage Tiers
+      <span class="entry-hint" title="Draft">
+        <svg xmlns="http://www.w3.org/2000/svg" height="35" viewBox="0 -960 960 960" fill="currentColor">
+          <path
+            d="M160-410v-60h300v60H160Zm0-165v-60h470v60H160Zm0-165v-60h470v60H160Zm360 580v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q9 9 13 20t4 22q0 11-4.5 22.5T862.09-380L643-160H520Zm300-263-37-37 37 37ZM580-220h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z" />
+        </svg>
+      </span>
+    </h1>
+    <div class="post-meta"><span title='2025-03-21 12:58:19 +0300 +03'>March 21, 2025</span>
+
+</div>
+  </header> 
+  <div class="post-content"><h1 id="what-is-azure-blob-storage">What is Azure Blob Storage?<a hidden class="anchor" aria-hidden="true" href="#what-is-azure-blob-storage">#</a></h1>
+<p><img alt="blob" loading="lazy" src="/static/icon/azureblobstorage.png"></p>
+<p>Azure Blob Storage is Microsoft’s cloud-based object storage service for storing massive amounts of unstructured data - such as images, videos, documents, backups, and logs.
+The term “blob” stands for Binary Large Object, meaning it can store virtually any file format without a fixed structure.</p>
+<p>It is designed for high availability, global accessibility, and cost efficiency, making it a preferred choice for businesses and developers needing scalable cloud storage.</p>
+<h1 id="what-is-it-used-for">What is it Used For?<a hidden class="anchor" aria-hidden="true" href="#what-is-it-used-for">#</a></h1>
+<p>Azure Blob Storage is suitable for various scenarios:</p>
+<p>Media hosting for websites or streaming platforms.</p>
+<p>Backup and disaster recovery storage.</p>
+<p>Big data analytics (data lakes).</p>
+<p>Archiving compliance or historical records.</p>
+<p>IoT data storage from sensors and devices.</p>
+<p>Static web content hosting like CSS, JavaScript, and images.</p>
+<h1 id="blob-types">Blob Types<a hidden class="anchor" aria-hidden="true" href="#blob-types">#</a></h1>
+<p>Before talking about tiers, it’s important to understand the three blob types supported in Azure:</p>
+<h3 id="block-blobs">Block Blobs<a hidden class="anchor" aria-hidden="true" href="#block-blobs">#</a></h3>
+<p>Store text or binary data in blocks.</p>
+<p>Ideal for media files, documents, and backups.</p>
+<p>Optimized for uploading large files efficiently.</p>
+<h3 id="append-blobs">Append Blobs<a hidden class="anchor" aria-hidden="true" href="#append-blobs">#</a></h3>
+<p>Designed for append-only operations.</p>
+<p>Great for logging scenarios where data is continuously added.</p>
+<h3 id="page-blobs">Page Blobs<a hidden class="anchor" aria-hidden="true" href="#page-blobs">#</a></h3>
+<p>Store random-access files like Virtual Hard Disk (VHD) files.</p>
+<p>Used mainly in Azure Virtual Machines.</p>
+<h1 id="blob-storage-tiers">Blob Storage Tiers<a hidden class="anchor" aria-hidden="true" href="#blob-storage-tiers">#</a></h1>
+<p>Azure Blob Storage tiers let you choose the most cost-effective way to store your data based on how often it’s accessed and how quickly you need it.</p>
+<h3 id="1-hot-tier">1. Hot Tier<a hidden class="anchor" aria-hidden="true" href="#1-hot-tier">#</a></h3>
+<h4 id="purpose">Purpose:<a hidden class="anchor" aria-hidden="true" href="#purpose">#</a></h4>
+<p>For data that is accessed or modified frequently.</p>
+<h4 id="cost">Cost:<a hidden class="anchor" aria-hidden="true" href="#cost">#</a></h4>
+<p>Highest storage cost, but lowest access/read cost.</p>
+<h4 id="retrieval-time">Retrieval Time:<a hidden class="anchor" aria-hidden="true" href="#retrieval-time">#</a></h4>
+<p>Instant access.</p>
+<h4 id="example-use-case">Example Use Case:<a hidden class="anchor" aria-hidden="true" href="#example-use-case">#</a></h4>
+<p>Website images, real-time analytics data, active project files.</p>
+<h4 id="-tip-if-your-files-are-being-read-multiple-times-a-day-the-hot-tier-is-more-cost-efficient-despite-the-higher-storage-price">🚀 Tip: If your files are being read multiple times a day, the Hot tier is more cost-efficient despite the higher storage price.<a hidden class="anchor" aria-hidden="true" href="#-tip-if-your-files-are-being-read-multiple-times-a-day-the-hot-tier-is-more-cost-efficient-despite-the-higher-storage-price">#</a></h4>
+<h3 id="2-cool-tier">2. Cool Tier<a hidden class="anchor" aria-hidden="true" href="#2-cool-tier">#</a></h3>
+<h4 id="purpose-1">Purpose:<a hidden class="anchor" aria-hidden="true" href="#purpose-1">#</a></h4>
+<p>For data accessed less frequently but still needed without delay.</p>
+<h4 id="cost-1">Cost:<a hidden class="anchor" aria-hidden="true" href="#cost-1">#</a></h4>
+<p>Lower storage cost than Hot, but higher access/read cost.</p>
+<h4 id="retrieval-time-1">Retrieval Time:<a hidden class="anchor" aria-hidden="true" href="#retrieval-time-1">#</a></h4>
+<p>Instant access.</p>
+<h4 id="example-use-case-1">Example Use Case:<a hidden class="anchor" aria-hidden="true" href="#example-use-case-1">#</a></h4>
+<p>Monthly reports, seasonal marketing assets, short-term backups.</p>
+<h4 id="-tip-cool-tier-saves-money-for-data-you-might-open-only-a-few-times-per-month-but-remember-that-frequent-access-can-make-it-more-expensive-than-hot-in-the-long-run">🚀 Tip: Cool tier saves money for data you might open only a few times per month, but remember that frequent access can make it more expensive than Hot in the long run.<a hidden class="anchor" aria-hidden="true" href="#-tip-cool-tier-saves-money-for-data-you-might-open-only-a-few-times-per-month-but-remember-that-frequent-access-can-make-it-more-expensive-than-hot-in-the-long-run">#</a></h4>
+<h3 id="3-archive-tier">3. Archive Tier<a hidden class="anchor" aria-hidden="true" href="#3-archive-tier">#</a></h3>
+<h4 id="purpose-2">Purpose:<a hidden class="anchor" aria-hidden="true" href="#purpose-2">#</a></h4>
+<p>For rarely accessed data that can wait hours to retrieve.</p>
+<h4 id="cost-2">Cost:<a hidden class="anchor" aria-hidden="true" href="#cost-2">#</a></h4>
+<p>Lowest storage cost, highest access/read cost, plus retrieval fees.</p>
+<h4 id="retrieval-time-2">Retrieval Time:<a hidden class="anchor" aria-hidden="true" href="#retrieval-time-2">#</a></h4>
+<p>Several hours.</p>
+<h4 id="example-use-case-2">Example Use Case:<a hidden class="anchor" aria-hidden="true" href="#example-use-case-2">#</a></h4>
+<p>Long-term compliance data, historical logs, disaster recovery backups.</p>
+<h4 id="-tip-archive-is-excellent-for-cold-storage-but-retrieval-time-can-take-15-hours-depending-on-size-and-settings">🚀 Tip: Archive is excellent for cold storage, but retrieval time can take 15+ hours depending on size and settings.<a hidden class="anchor" aria-hidden="true" href="#-tip-archive-is-excellent-for-cold-storage-but-retrieval-time-can-take-15-hours-depending-on-size-and-settings">#</a></h4>
+<h1 id="conclusion">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion">#</a></h1>
+<p>Azure Blob Storage gives you flexibility in storage types and cost models.
+By understanding blob types (Block, Append, Page) and access tiers (Hot, Cool, Archive), you can optimize performance and save money. The key is to analyze your data access patterns and match them to the correct tier.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">selimmertalkan</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

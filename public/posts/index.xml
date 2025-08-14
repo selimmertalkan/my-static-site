@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Posts on selimmertalkan</title>
+    <link>http://localhost:1313/posts/</link>
+    <description>Recent content in Posts on selimmertalkan</description>
+    <generator>Hugo -- 0.148.2</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 14 Aug 2025 13:13:43 +0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hello!</title>
+      <link>http://localhost:1313/posts/my-t-post/</link>
+      <pubDate>Thu, 14 Aug 2025 13:13:43 +0300</pubDate>
+      <guid>http://localhost:1313/posts/my-t-post/</guid>
+      <description>&lt;h1 id=&#34;welcome-were-passionate-about-cloud-devops-and-automation-lets-build-the-future-together&#34;&gt;Welcome! We&amp;rsquo;re passionate about Cloud, DevOps, and automation. Let&amp;rsquo;s build the future, together.&lt;/h1&gt;</description>
+    </item>
+    <item>
+      <title>My Sec Post</title>
+      <link>http://localhost:1313/posts/my-sec-post/</link>
+      <pubDate>Thu, 14 Aug 2025 13:01:00 +0300</pubDate>
+      <guid>http://localhost:1313/posts/my-sec-post/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;h2 id=&#34;introduction-1&#34;&gt;Introduction&lt;/h2&gt;
+&lt;h2 id=&#34;introduction-2&#34;&gt;Introduction&lt;/h2&gt;</description>
+    </item>
+    <item>
+      <title>Azure Blob Storage and Blob Storage Tiers</title>
+      <link>http://localhost:1313/posts/my-first-post/</link>
+      <pubDate>Fri, 21 Mar 2025 12:58:19 +0300</pubDate>
+      <guid>http://localhost:1313/posts/my-first-post/</guid>
+      <description>&lt;h1 id=&#34;what-is-azure-blob-storage&#34;&gt;What is Azure Blob Storage?&lt;/h1&gt;
+&lt;p&gt;&lt;img alt=&#34;blob&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/static/icon/azureblobstorage.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Azure Blob Storage is Microsoft’s cloud-based object storage service for storing massive amounts of unstructured data - such as images, videos, documents, backups, and logs.
+The term “blob” stands for Binary Large Object, meaning it can store virtually any file format without a fixed structure.&lt;/p&gt;
+&lt;p&gt;It is designed for high availability, global accessibility, and cost efficiency, making it a preferred choice for businesses and developers needing scalable cloud storage.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

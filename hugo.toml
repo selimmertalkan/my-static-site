@@ -1,0 +1,16 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'selimmertalkan'
+theme = 'PaperMod'
+
+
+[menu]
+ [[menu.main]]
+    name = "linktr.ee"
+    url = "https://linktr.ee/selimmertalkan"
+    weight = 30
+
+    [[menu.main]]
+    name = "About Me"
+    url = "/about/"
+    weight = 30
