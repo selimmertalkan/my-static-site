@@ -75,7 +75,7 @@ Instant access.
 
 Website images, real-time analytics data, active project files.
 
-#### 🚀 Tip: If your files are being read multiple times a day, the Hot tier is more cost-efficient despite the higher storage price.
+#### 🧊 Tip: If your files are being read multiple times a day, the Hot tier is more cost-efficient despite the higher storage price.
 
 ### 2. Cool Tier
 
@@ -95,7 +95,7 @@ Instant access.
 
 Monthly reports, seasonal marketing assets, short-term backups.
 
-#### 🚀 Tip: Cool tier saves money for data you might open only a few times per month, but remember that frequent access can make it more expensive than Hot in the long run.
+#### 🧊 Tip: Cool tier saves money for data you might open only a few times per month, but remember that frequent access can make it more expensive than Hot in the long run.
 
 ### 3. Archive Tier
 
@@ -115,7 +115,7 @@ Several hours.
 
 Long-term compliance data, historical logs, disaster recovery backups.
 
-#### 🚀 Tip: Archive is excellent for cold storage, but retrieval time can take 15+ hours depending on size and settings.
+#### 🧊 Tip: Archive is excellent for cold storage, but retrieval time can take 15+ hours depending on size and settings.
 
 # Conclusion
 
