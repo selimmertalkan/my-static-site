@@ -1,12 +1,10 @@
 +++
-date = '2025-03-21T12:58:19+03:00'
+date = '2025-02-21T12:58:19+03:00'
 draft = true
 title = 'Azure Blob Storage and Blob Storage Tiers'
 +++
 
 # What is Azure Blob Storage?
-
-![blob](/static/icon/azureblobstorage.png)
 
 Azure Blob Storage is Microsoft’s cloud-based object storage service for storing massive amounts of unstructured data - such as images, videos, documents, backups, and logs.
 The term “blob” stands for Binary Large Object, meaning it can store virtually any file format without a fixed structure.
@@ -15,19 +13,19 @@ It is designed for high availability, global accessibility, and cost efficiency,
 
 # What is it Used For?
 
-Azure Blob Storage is suitable for various scenarios:
+### Azure Blob Storage is suitable for various scenarios:
 
-Media hosting for websites or streaming platforms.
+- Media hosting for websites or streaming platforms.
 
-Backup and disaster recovery storage.
+- Backup and disaster recovery storage.
 
-Big data analytics (data lakes).
+- Big data analytics (data lakes).
 
-Archiving compliance or historical records.
+- Archiving compliance or historical records.
 
-IoT data storage from sensors and devices.
+- IoT data storage from sensors and devices.
 
-Static web content hosting like CSS, JavaScript, and images.
+- Static web content hosting like CSS, JavaScript, and images.
 
 # Blob Types
 
@@ -35,23 +33,23 @@ Before talking about tiers, it’s important to understand the three blob types 
 
 ### Block Blobs
 
-Store text or binary data in blocks.
+- Store text or binary data in blocks.
 
-Ideal for media files, documents, and backups.
+- Ideal for media files, documents, and backups.
 
-Optimized for uploading large files efficiently.
+- Optimized for uploading large files efficiently.
 
 ### Append Blobs
 
-Designed for append-only operations.
+- Designed for append-only operations.
 
-Great for logging scenarios where data is continuously added.
+- Great for logging scenarios where data is continuously added.
 
 ### Page Blobs
 
-Store random-access files like Virtual Hard Disk (VHD) files.
+- Store random-access files like Virtual Hard Disk (VHD) files.
 
-Used mainly in Azure Virtual Machines.
+- Used mainly in Azure Virtual Machines.
 
 # Blob Storage Tiers
 

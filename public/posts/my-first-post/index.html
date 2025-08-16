@@ -8,7 +8,6 @@
 <title>Azure Blob Storage and Blob Storage Tiers | selimmertalkan</title>
 <meta name="keywords" content="">
 <meta name="description" content="What is Azure Blob Storage?
-
 Azure Blob Storage is Microsoft’s cloud-based object storage service for storing massive amounts of unstructured data - such as images, videos, documents, backups, and logs.
 The term “blob” stands for Binary Large Object, meaning it can store virtually any file format without a fixed structure.
 It is designed for high availability, global accessibility, and cost efficiency, making it a preferred choice for businesses and developers needing scalable cloud storage.">
@@ -140,30 +139,63 @@ It is designed for high availability, global accessibility, and cost efficiency,
 </div>
   </header> 
   <div class="post-content"><h1 id="what-is-azure-blob-storage">What is Azure Blob Storage?<a hidden class="anchor" aria-hidden="true" href="#what-is-azure-blob-storage">#</a></h1>
-<p><img alt="blob" loading="lazy" src="/static/icon/azureblobstorage.png"></p>
 <p>Azure Blob Storage is Microsoft’s cloud-based object storage service for storing massive amounts of unstructured data - such as images, videos, documents, backups, and logs.
 The term “blob” stands for Binary Large Object, meaning it can store virtually any file format without a fixed structure.</p>
 <p>It is designed for high availability, global accessibility, and cost efficiency, making it a preferred choice for businesses and developers needing scalable cloud storage.</p>
 <h1 id="what-is-it-used-for">What is it Used For?<a hidden class="anchor" aria-hidden="true" href="#what-is-it-used-for">#</a></h1>
-<p>Azure Blob Storage is suitable for various scenarios:</p>
+<h3 id="azure-blob-storage-is-suitable-for-various-scenarios">Azure Blob Storage is suitable for various scenarios:<a hidden class="anchor" aria-hidden="true" href="#azure-blob-storage-is-suitable-for-various-scenarios">#</a></h3>
+<ul>
+<li>
 <p>Media hosting for websites or streaming platforms.</p>
+</li>
+<li>
 <p>Backup and disaster recovery storage.</p>
+</li>
+<li>
 <p>Big data analytics (data lakes).</p>
+</li>
+<li>
 <p>Archiving compliance or historical records.</p>
+</li>
+<li>
 <p>IoT data storage from sensors and devices.</p>
+</li>
+<li>
 <p>Static web content hosting like CSS, JavaScript, and images.</p>
+</li>
+</ul>
 <h1 id="blob-types">Blob Types<a hidden class="anchor" aria-hidden="true" href="#blob-types">#</a></h1>
 <p>Before talking about tiers, it’s important to understand the three blob types supported in Azure:</p>
 <h3 id="block-blobs">Block Blobs<a hidden class="anchor" aria-hidden="true" href="#block-blobs">#</a></h3>
+<ul>
+<li>
 <p>Store text or binary data in blocks.</p>
+</li>
+<li>
 <p>Ideal for media files, documents, and backups.</p>
+</li>
+<li>
 <p>Optimized for uploading large files efficiently.</p>
+</li>
+</ul>
 <h3 id="append-blobs">Append Blobs<a hidden class="anchor" aria-hidden="true" href="#append-blobs">#</a></h3>
+<ul>
+<li>
 <p>Designed for append-only operations.</p>
+</li>
+<li>
 <p>Great for logging scenarios where data is continuously added.</p>
+</li>
+</ul>
 <h3 id="page-blobs">Page Blobs<a hidden class="anchor" aria-hidden="true" href="#page-blobs">#</a></h3>
+<ul>
+<li>
 <p>Store random-access files like Virtual Hard Disk (VHD) files.</p>
+</li>
+<li>
 <p>Used mainly in Azure Virtual Machines.</p>
+</li>
+</ul>
 <h1 id="blob-storage-tiers">Blob Storage Tiers<a hidden class="anchor" aria-hidden="true" href="#blob-storage-tiers">#</a></h1>
 <p>Azure Blob Storage tiers let you choose the most cost-effective way to store your data based on how often it’s accessed and how quickly you need it.</p>
 <h3 id="1-hot-tier">1. Hot Tier<a hidden class="anchor" aria-hidden="true" href="#1-hot-tier">#</a></h3>

@@ -5,12 +5,13 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Azure Management Tools | selimmertalkan</title>
+<title>Azure Virtual Machines | selimmertalkan</title>
 <meta name="keywords" content="">
-<meta name="description" content="An Overview of Azure CLI, Azure PowerShell, and Azure Portal
-When working with Microsoft Azure, efficient management is key to deploying, monitoring, and scaling resources. Azure offers several management tools that cater to different preferences and use cases — whether you prefer a graphical interface, a command-line environment, or automation scripts. In this article, we’ll explore what Azure Management Tools are, the types available, and dive deeper into Azure CLI, Azure PowerShell, and Azure Portal.">
+<meta name="description" content="Azure Virtual Machines Explained: Features, Use Cases, and Best Practices
+Virtual Machines (VMs) are one of the core services in Microsoft Azure, enabling you to run applications, host workloads, and build development environments in the cloud. Azure Virtual Machines provide the flexibility of virtualization without the need to invest in and maintain physical hardware.
+In this article, we’ll cover what Azure Virtual Machines are, their use cases, types, and the key concepts you need to know.">
 <meta name="author" content="">
-<link rel="canonical" href="http://localhost:1313/posts/my-sec-post/">
+<link rel="canonical" href="http://localhost:1313/posts/4azurevirtualmachines/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.36819bea596090d8b48cf10d9831382996197aa7e4fc86f792f7c08c9ca4d23b.css" integrity="sha256-NoGb6llgkNi0jPENmDE4KZYZeqfk/Ib3kvfAjJyk0js=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
@@ -19,7 +20,7 @@ When working with Microsoft Azure, efficient management is key to deploying, mon
 <link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/my-sec-post/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/4azurevirtualmachines/">
 <noscript>
     <style>
         #theme-toggle,
@@ -124,7 +125,7 @@ When working with Microsoft Azure, efficient management is key to deploying, mon
   <header class="post-header">
     
     <h1 class="post-title entry-hint-parent">
-      Azure Management Tools
+      Azure Virtual Machines
       <span class="entry-hint" title="Draft">
         <svg xmlns="http://www.w3.org/2000/svg" height="35" viewBox="0 -960 960 960" fill="currentColor">
           <path
@@ -132,101 +133,127 @@ When working with Microsoft Azure, efficient management is key to deploying, mon
         </svg>
       </span>
     </h1>
-    <div class="post-meta"><span title='2025-08-14 13:01:00 +0300 +03'>August 14, 2025</span>
+    <div class="post-meta"><span title='2025-05-17 15:58:47 +0300 +03'>May 17, 2025</span>
 
 </div>
   </header> 
-  <div class="post-content"><h1 id="an-overview-of-azure-cli-azure-powershell-and-azure-portal">An Overview of Azure CLI, Azure PowerShell, and Azure Portal<a hidden class="anchor" aria-hidden="true" href="#an-overview-of-azure-cli-azure-powershell-and-azure-portal">#</a></h1>
-<p>When working with Microsoft Azure, efficient management is key to deploying, monitoring, and scaling resources. Azure offers several management tools that cater to different preferences and use cases — whether you prefer a graphical interface, a command-line environment, or automation scripts. In this article, we’ll explore what Azure Management Tools are, the types available, and dive deeper into Azure CLI, Azure PowerShell, and Azure Portal.</p>
-<h1 id="what-are-azure-management-tools">What Are Azure Management Tools?<a hidden class="anchor" aria-hidden="true" href="#what-are-azure-management-tools">#</a></h1>
-<p>Azure Management Tools are interfaces or utilities that allow you to interact with Azure resources. They enable you to create, configure, monitor, and delete resources in a controlled and efficient way. These tools range from fully graphical dashboards to command-line utilities designed for automation.</p>
-<h3 id="the-main-categories-of-azure-management-tools-include">The main categories of Azure Management Tools include:<a hidden class="anchor" aria-hidden="true" href="#the-main-categories-of-azure-management-tools-include">#</a></h3>
+  <div class="post-content"><h1 id="azure-virtual-machines-explained-features-use-cases-and-best-practices">Azure Virtual Machines Explained: Features, Use Cases, and Best Practices<a hidden class="anchor" aria-hidden="true" href="#azure-virtual-machines-explained-features-use-cases-and-best-practices">#</a></h1>
+<p>Virtual Machines (VMs) are one of the core services in Microsoft Azure, enabling you to run applications, host workloads, and build development environments in the cloud. Azure Virtual Machines provide the flexibility of virtualization without the need to invest in and maintain physical hardware.</p>
+<p>In this article, we’ll cover what Azure Virtual Machines are, their use cases, types, and the key concepts you need to know.</p>
+<h1 id="what-is-an-azure-virtual-machine">What Is an Azure Virtual Machine?<a hidden class="anchor" aria-hidden="true" href="#what-is-an-azure-virtual-machine">#</a></h1>
+<p>An Azure Virtual Machine is a scalable computing resource provided by Microsoft Azure that allows you to run operating systems and applications in a virtualized environment. They function like physical computers but exist in the cloud and are managed through Azure’s infrastructure.</p>
+<p>VMs in Azure run on Azure’s global data centers and are provisioned on-demand. This means you can create, configure, and deploy a VM in minutes, with complete control over the OS, networking, and storage.</p>
+<h1 id="key-use-cases">Key Use Cases<a hidden class="anchor" aria-hidden="true" href="#key-use-cases">#</a></h1>
 <ul>
 <li>
-<p>Graphical tools – such as Azure Portal</p>
+<p>Application Hosting – Run web servers, application servers, or enterprise apps.</p>
 </li>
 <li>
-<p>Command-line tools – such as Azure CLI and Azure PowerShell</p>
+<p>Development and Testing – Create isolated environments for building and testing software.</p>
 </li>
 <li>
-<p>SDKs and APIs – for programmatic access via supported programming languages</p>
+<p>Backup and Disaster Recovery – Use VMs for quick recovery scenarios.</p>
+</li>
+<li>
+<p>High-Performance Computing (HPC) – Run compute-intensive workloads.</p>
+</li>
+<li>
+<p>Lift and Shift – Migrate on-premises workloads directly to the cloud.</p>
 </li>
 </ul>
-<h1 id="azure-cli">Azure CLI<a hidden class="anchor" aria-hidden="true" href="#azure-cli">#</a></h1>
-<p>The Azure Command-Line Interface (CLI) is a cross-platform command-line tool for managing Azure resources. It is designed for those who prefer scripting or automation over graphical interfaces.</p>
-<h3 id="key-features-of-azure-cli">Key Features of Azure CLI:<a hidden class="anchor" aria-hidden="true" href="#key-features-of-azure-cli">#</a></h3>
-<h4 id="cross-platform">Cross-platform:<a hidden class="anchor" aria-hidden="true" href="#cross-platform">#</a></h4>
-<p>Works on Windows, macOS, and Linux.</p>
-<h4 id="automation-friendly">Automation-friendly:<a hidden class="anchor" aria-hidden="true" href="#automation-friendly">#</a></h4>
-<p>Can be integrated into CI/CD pipelines or shell scripts.</p>
-<h4 id="simplicity">Simplicity:<a hidden class="anchor" aria-hidden="true" href="#simplicity">#</a></h4>
-<p>Uses commands with a straightforward syntax, often easier for those familiar with Bash or similar shells.</p>
-<h3 id="example-command">Example Command:<a hidden class="anchor" aria-hidden="true" href="#example-command">#</a></h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>az group create --name MyResourceGroup --location eastus
-</span></span></code></pre></div><p>This command creates a new resource group in the East US region.</p>
-<h2 id="azure-powershell">Azure PowerShell<a hidden class="anchor" aria-hidden="true" href="#azure-powershell">#</a></h2>
-<p>Azure PowerShell is a set of cmdlets (command-lets) that allow you to manage Azure resources directly from PowerShell.</p>
-<h3 id="why-use-azure-powershell">Why Use Azure PowerShell?<a hidden class="anchor" aria-hidden="true" href="#why-use-azure-powershell">#</a></h3>
-<h4 id="deep-integration-with-windows-powershell">Deep integration with Windows PowerShell:<a hidden class="anchor" aria-hidden="true" href="#deep-integration-with-windows-powershell">#</a></h4>
-<p>Ideal for administrators familiar with PowerShell scripting.</p>
-<h4 id="automation">Automation:<a hidden class="anchor" aria-hidden="true" href="#automation">#</a></h4>
-<p>Easily automate repetitive tasks in Azure.</p>
-<h4 id="consistency">Consistency:<a hidden class="anchor" aria-hidden="true" href="#consistency">#</a></h4>
-<p>Works with Azure Resource Manager (ARM) to ensure resource management is predictable.</p>
-<h3 id="versions-of-powershell-for-azure">Versions of PowerShell for Azure:<a hidden class="anchor" aria-hidden="true" href="#versions-of-powershell-for-azure">#</a></h3>
-<h4 id="windows-powershell">Windows PowerShell:<a hidden class="anchor" aria-hidden="true" href="#windows-powershell">#</a></h4>
-<p>The original version, Windows-only.</p>
-<h4 id="powershell-core-pwsh">PowerShell Core (pwsh):<a hidden class="anchor" aria-hidden="true" href="#powershell-core-pwsh">#</a></h4>
-<p>Cross-platform version based on .NET Core, supported on Windows, macOS, and Linux.</p>
-<h4 id="az-powershell-module">Az PowerShell Module:<a hidden class="anchor" aria-hidden="true" href="#az-powershell-module">#</a></h4>
-<p>The recommended module for managing Azure resources (replaces the older AzureRM module).</p>
-<h3 id="example-command-1">Example Command:<a hidden class="anchor" aria-hidden="true" href="#example-command-1">#</a></h3>
-<p><code>New-AzResourceGroup -Name &quot;MyResourceGroup&quot; -Location &quot;EastUS&quot;</code></p>
-<p>This creates a new resource group similar to the Azure CLI example, but using PowerShell syntax.</p>
-<h2 id="azure-portal">Azure Portal<a hidden class="anchor" aria-hidden="true" href="#azure-portal">#</a></h2>
-<p>The Azure Portal is a web-based graphical interface for managing Azure resources. It is ideal for users who prefer a visual approach and want to explore Azure without memorizing commands.</p>
-<h3 id="key-features">Key Features:<a hidden class="anchor" aria-hidden="true" href="#key-features">#</a></h3>
+<h1 id="vm-sizes-and-types">VM Sizes and Types<a hidden class="anchor" aria-hidden="true" href="#vm-sizes-and-types">#</a></h1>
 <ul>
 <li>
-<p>Visual dashboards for monitoring resources.</p>
+<p>Azure offers different VM series optimized for specific workloads:</p>
 </li>
 <li>
-<p>Resource creation wizards to guide you through deployments.</p>
+<p>General Purpose – Balanced CPU-to-memory ratio (e.g., B-series, Dv3-series).</p>
 </li>
 <li>
-<p>Built-in cost management tools.</p>
+<p>Compute Optimized – Higher CPU-to-memory ratio for compute-heavy apps (e.g., F-series).</p>
 </li>
 <li>
-<p>Accessible at: <a href="https://portal.azure.com">https://portal.azure.com</a></p>
+<p>Memory Optimized – High memory for in-memory databases and large caches (e.g., E-series).</p>
+</li>
+<li>
+<p>Storage Optimized – High disk throughput and IOPS (e.g., Lsv2-series).</p>
+</li>
+<li>
+<p>GPU VMs – For rendering, AI, and machine learning workloads (e.g., NC-series, NV-series).</p>
+</li>
+<li>
+<p>High Performance Compute (HPC) – For scientific simulations and big data (e.g., H-series).</p>
 </li>
 </ul>
-<h3 id="use-cases">Use Cases:<a hidden class="anchor" aria-hidden="true" href="#use-cases">#</a></h3>
+<h1 id="operating-systems">Operating Systems<a hidden class="anchor" aria-hidden="true" href="#operating-systems">#</a></h1>
+<h3 id="azure-vms-support-a-wide-range-of-operating-systems">Azure VMs support a wide range of operating systems:<a hidden class="anchor" aria-hidden="true" href="#azure-vms-support-a-wide-range-of-operating-systems">#</a></h3>
 <ul>
 <li>
-<p>Quick resource creation and management.</p>
+<p>Windows Server (2012 R2, 2016, 2019, 2022)</p>
 </li>
 <li>
-<p>Visualizing metrics and performance.</p>
-</li>
-<li>
-<p>Accessing Azure services without installing local tools.</p>
+<p>Linux distributions such as Ubuntu, CentOS, Debian, Red Hat Enterprise Linux (RHEL), and SUSE</p>
 </li>
 </ul>
-<h2 id="how-they-work-together">How They Work Together<a hidden class="anchor" aria-hidden="true" href="#how-they-work-together">#</a></h2>
-<p>Although these tools can be used independently, many Azure professionals use a combination of them:</p>
+<h1 id="pricing-and-billing">Pricing and Billing<a hidden class="anchor" aria-hidden="true" href="#pricing-and-billing">#</a></h1>
+<h3 id="azure-vms-follow-a-pay-as-you-go-model-costs-are-based-on">Azure VMs follow a pay-as-you-go model. Costs are based on:<a hidden class="anchor" aria-hidden="true" href="#azure-vms-follow-a-pay-as-you-go-model-costs-are-based-on">#</a></h3>
 <ul>
 <li>
-<p>Azure Portal for quick checks and visual management.</p>
+<p>VM size and type.</p>
 </li>
 <li>
-<p>Azure CLI for fast, script-based operations.</p>
+<p>Operating system (Windows VMs typically cost more due to licensing).</p>
 </li>
 <li>
-<p>Azure PowerShell for automation in Windows-heavy environments or complex scripts.</p>
+<p>Storage type (Standard HDD, Standard SSD, Premium SSD).</p>
+</li>
+<li>
+<p>Networking usage.</p>
+</li>
+<li>
+<p>Running time (per-second billing for most VMs).</p>
 </li>
 </ul>
-<h2 id="conclusion">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion">#</a></h2>
-<p>Azure Management Tools give you the flexibility to work the way you prefer — whether that’s through a user-friendly web portal, a cross-platform CLI, or the powerful automation capabilities of PowerShell. Understanding when and how to use each tool is a crucial skill for anyone working in cloud computing and DevOps.</p>
+<h3 id="you-can-also-reduce-costs-by">You can also reduce costs by:<a hidden class="anchor" aria-hidden="true" href="#you-can-also-reduce-costs-by">#</a></h3>
+<ul>
+<li>
+<p>Reserved Instances (commit for 1 or 3 years).</p>
+</li>
+<li>
+<p>Spot VMs (low-cost unused capacity, suitable for non-critical workloads).</p>
+</li>
+</ul>
+<h1 id="availability-and-resilience">Availability and Resilience<a hidden class="anchor" aria-hidden="true" href="#availability-and-resilience">#</a></h1>
+<h3 id="azure-vms-support-high-availability-and-fault-tolerance">Azure VMs support high availability and fault tolerance:<a hidden class="anchor" aria-hidden="true" href="#azure-vms-support-high-availability-and-fault-tolerance">#</a></h3>
+<ul>
+<li>
+<p>Availability Sets – Protect against hardware failures by distributing VMs across fault domains.</p>
+</li>
+<li>
+<p>Availability Zones – Place VMs in separate data centers within a region.</p>
+</li>
+<li>
+<p>VM Scale Sets – Automatically scale VM instances based on demand.</p>
+</li>
+</ul>
+<h1 id="management-options">Management Options<a hidden class="anchor" aria-hidden="true" href="#management-options">#</a></h1>
+<h3 id="azure-vms-can-be-managed-through">Azure VMs can be managed through:<a hidden class="anchor" aria-hidden="true" href="#azure-vms-can-be-managed-through">#</a></h3>
+<ul>
+<li>
+<p>Azure Portal – Web-based graphical interface.</p>
+</li>
+<li>
+<p>Azure CLI – Command-line tool for automation.</p>
+</li>
+<li>
+<p>Azure PowerShell – Cmdlets for scripting and management.</p>
+</li>
+<li>
+<p>ARM Templates / Bicep – Infrastructure as Code for consistent deployments.</p>
+</li>
+</ul>
+<h1 id="conclusion">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion">#</a></h1>
+<p>Azure Virtual Machines provide a flexible, scalable, and cost-effective way to run workloads in the cloud. With a variety of sizes, operating systems, and deployment options, they can handle everything from small testing environments to large-scale enterprise applications. Understanding their features, pricing, and availability options will help you make the most of this powerful Azure service.</p>
 
 
   </div>

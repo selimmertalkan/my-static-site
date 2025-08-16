@@ -16,24 +16,56 @@
       <description>&lt;h1 id=&#34;welcome-were-passionate-about-cloud-devops-and-automation-lets-build-the-future-together&#34;&gt;Welcome! We&amp;rsquo;re passionate about Cloud, DevOps, and automation. Let&amp;rsquo;s build the future, together.&lt;/h1&gt;</description>
     </item>
     <item>
-      <title>My Sec Post</title>
-      <link>http://localhost:1313/posts/my-sec-post/</link>
-      <pubDate>Thu, 14 Aug 2025 13:01:00 +0300</pubDate>
-      <guid>http://localhost:1313/posts/my-sec-post/</guid>
-      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
-&lt;h2 id=&#34;introduction-1&#34;&gt;Introduction&lt;/h2&gt;
-&lt;h2 id=&#34;introduction-2&#34;&gt;Introduction&lt;/h2&gt;</description>
+      <title>Azure Resource Hierarchy</title>
+      <link>http://localhost:1313/posts/5azureresourcehierarchy/</link>
+      <pubDate>Thu, 12 Jun 2025 19:25:26 +0300</pubDate>
+      <guid>http://localhost:1313/posts/5azureresourcehierarchy/</guid>
+      <description>&lt;h1 id=&#34;understanding-azure-resource-hierarchy-from-management-groups-to-resources&#34;&gt;Understanding Azure Resource Hierarchy: From Management Groups to Resources&lt;/h1&gt;
+&lt;p&gt;Organizing and managing cloud resources effectively is crucial for cost control, security, and operational efficiency. In Microsoft Azure, the resource hierarchy defines how resources are structured, organized, and managed. Understanding this hierarchy is essential for setting governance policies, managing permissions, and ensuring a scalable cloud environment.&lt;/p&gt;
+&lt;p&gt;In this article, we’ll break down the Azure resource hierarchy, explain each layer, and show how they work together.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Azure Virtual Machines</title>
+      <link>http://localhost:1313/posts/4azurevirtualmachines/</link>
+      <pubDate>Sat, 17 May 2025 15:58:47 +0300</pubDate>
+      <guid>http://localhost:1313/posts/4azurevirtualmachines/</guid>
+      <description>&lt;h1 id=&#34;azure-virtual-machines-explained-features-use-cases-and-best-practices&#34;&gt;Azure Virtual Machines Explained: Features, Use Cases, and Best Practices&lt;/h1&gt;
+&lt;p&gt;Virtual Machines (VMs) are one of the core services in Microsoft Azure, enabling you to run applications, host workloads, and build development environments in the cloud. Azure Virtual Machines provide the flexibility of virtualization without the need to invest in and maintain physical hardware.&lt;/p&gt;
+&lt;p&gt;In this article, we’ll cover what Azure Virtual Machines are, their use cases, types, and the key concepts you need to know.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Cloud Computing Benefits</title>
+      <link>http://localhost:1313/posts/3cloudcomputingbenefits/</link>
+      <pubDate>Fri, 11 Apr 2025 15:35:54 +0300</pubDate>
+      <guid>http://localhost:1313/posts/3cloudcomputingbenefits/</guid>
+      <description>&lt;h1 id=&#34;the-key-benefits-of-cloud-computing&#34;&gt;The Key Benefits of Cloud Computing&lt;/h1&gt;
+&lt;p&gt;Cloud computing has transformed the way businesses and individuals use technology. By delivering computing services over the internet — including servers, storage, databases, networking, and software — it offers unparalleled flexibility, scalability, and cost efficiency. Whether you are a small startup or a global enterprise, the cloud provides tools and services to meet your needs.&lt;/p&gt;
+&lt;p&gt;In this article, we’ll explore the core benefits of cloud computing and why it has become a foundation for modern IT infrastructure.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Azure Management Tools</title>
+      <link>http://localhost:1313/posts/2azurecommand/</link>
+      <pubDate>Fri, 14 Mar 2025 13:01:00 +0300</pubDate>
+      <guid>http://localhost:1313/posts/2azurecommand/</guid>
+      <description>&lt;h1 id=&#34;an-overview-of-azure-cli-azure-powershell-and-azure-portal&#34;&gt;An Overview of Azure CLI, Azure PowerShell, and Azure Portal&lt;/h1&gt;
+&lt;p&gt;When working with Microsoft Azure, efficient management is key to deploying, monitoring, and scaling resources. Azure offers several management tools that cater to different preferences and use cases — whether you prefer a graphical interface, a command-line environment, or automation scripts. In this article, we’ll explore what Azure Management Tools are, the types available, and dive deeper into Azure CLI, Azure PowerShell, and Azure Portal.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Azure Blob Storage and Blob Storage Tiers</title>
-      <link>http://localhost:1313/posts/my-first-post/</link>
-      <pubDate>Fri, 21 Mar 2025 12:58:19 +0300</pubDate>
-      <guid>http://localhost:1313/posts/my-first-post/</guid>
+      <link>http://localhost:1313/posts/1azureblob/</link>
+      <pubDate>Fri, 21 Feb 2025 12:58:19 +0300</pubDate>
+      <guid>http://localhost:1313/posts/1azureblob/</guid>
       <description>&lt;h1 id=&#34;what-is-azure-blob-storage&#34;&gt;What is Azure Blob Storage?&lt;/h1&gt;
-&lt;p&gt;&lt;img alt=&#34;blob&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/static/icon/azureblobstorage.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Azure Blob Storage is Microsoft’s cloud-based object storage service for storing massive amounts of unstructured data - such as images, videos, documents, backups, and logs.
 The term “blob” stands for Binary Large Object, meaning it can store virtually any file format without a fixed structure.&lt;/p&gt;
 &lt;p&gt;It is designed for high availability, global accessibility, and cost efficiency, making it a preferred choice for businesses and developers needing scalable cloud storage.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/search/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/search/</guid>
+      <description></description>
     </item>
   </channel>
 </rss>

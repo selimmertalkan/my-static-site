@@ -11,13 +11,26 @@
     <loc>http://localhost:1313/</loc>
     <lastmod>2025-08-14T13:13:43+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/my-sec-post/</loc>
-    <lastmod>2025-08-14T13:01:00+03:00</lastmod>
+    <loc>http://localhost:1313/posts/5azureresourcehierarchy/</loc>
+    <lastmod>2025-06-12T19:25:26+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/my-first-post/</loc>
-    <lastmod>2025-03-21T12:58:19+03:00</lastmod>
+    <loc>http://localhost:1313/posts/4azurevirtualmachines/</loc>
+    <lastmod>2025-05-17T15:58:47+03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/3cloudcomputingbenefits/</loc>
+    <lastmod>2025-04-11T15:35:54+03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2azurecommand/</loc>
+    <lastmod>2025-03-14T13:01:00+03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/1azureblob/</loc>
+    <lastmod>2025-02-21T12:58:19+03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/search/</loc>
   </url><url>
     <loc>http://localhost:1313/about/</loc>
+  </url><url>
+    <loc>http://localhost:1313/archives/</loc>
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
   </url><url>
